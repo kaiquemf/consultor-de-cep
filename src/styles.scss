@@ -3,10 +3,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}*:focus {
-  -webkit-box-shadow: 0px 0px 10px 5px rgba(104, 197, 226, 0.6);
-  -moz-box-shadow: 0px 0px 10px 5px rgba(104, 197, 226, 0.6);
-  box-shadow: 0px 0px 10px 5px rgba(105, 198, 226, 0.6);
 }
 
 :root {
@@ -18,4 +14,5 @@ input {
   border: 1px solid $gray-color;
   outline: none;
   border-radius: 2rem;
+  padding: .4rem 1rem;
 }

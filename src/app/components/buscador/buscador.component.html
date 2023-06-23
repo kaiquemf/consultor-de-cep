@@ -1,0 +1,50 @@
+<section>
+
+  <h1>Consulta de CEP</h1>
+  
+  <div *ngIf="!endereco && !exibirFormulario">
+    <div class="form-group">
+      <label for="cepInput">Digite seu CEP:</label>
+      <input id="cepInput" type="text" [(ngModel)]="cep" placeholder="Digite seu CEP" />
+      <button (click)="buscarEnderecoPorCep()">Buscar</button>
+    </div>
+  </div>
+  <button *ngIf="!endereco && !exibirFormulario" class="pesquisa-logradouro"
+  (click)="tentativaPorLogradouro()">não sei meu cep</button>
+  
+  <div *ngIf="endereco">
+    <div>
+      <h3>Endereço encontrado:</h3>
+      <p>CEP: {{ endereco.cep }}</p>
+      <p>Logradouro: {{ endereco.logradouro }}</p>
+      <p>Complemento: {{ endereco.complemento }}</p>
+      <p>Bairro: {{ endereco.bairro }}</p>
+      <p>Localidade: {{ endereco.localidade }}</p>
+      <p>UF: {{ endereco.uf }}</p>
+    </div>
+  </div>
+  <button *ngIf="endereco" (click)="recarregarPagina()">Voltar</button>
+
+  <div *ngIf="!endereco && exibirFormulario">
+    <div class="form-group logradouro">
+
+      <label for="ufInput">Estado:</label>
+      <select (change)="atualizarUF($event)">
+        <option *ngFor="let estado of lista_Uf_Estados" [value]="estado.uf">{{ estado.nome }}</option>
+      </select>
+
+      <label for="localidadeInput">Cidade:</label>
+      <input id="localidadeInput" type="text" [(ngModel)]="localidade" placeholder="Digite a Localidade" />
+
+      <label for="logradouroInput">Rua:</label>
+      <input id="logradouroInput" type="text" [(ngModel)]="logradouro" placeholder="Digite o Logradouro" />
+      <button (click)="buscarEnderecoPorLogradouro()">Buscar</button>
+    </div>
+    
+  </div>
+  <button *ngIf="!endereco && exibirFormulario" (click)="tentativaPorCep()">
+    Procurar pelo cep
+  </button>
+
+  
+</section>

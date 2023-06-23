@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BuscadorPorCepComponent } from './buscador-por-cep.component';
+import { BuscadorPorCepComponent } from './buscador.component';
 
 describe('BuscadorPorCepComponent', () => {
   let component: BuscadorPorCepComponent;
