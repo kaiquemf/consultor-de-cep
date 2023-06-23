@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BuscadorPorCepComponent } from './components/buscador-por-cep/buscador-por-cep.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BuscadorPorCepComponent
   ],
   imports: [
     BrowserModule,
