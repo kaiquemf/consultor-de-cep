@@ -17,6 +17,11 @@ export class BuscadorPorCepComponent {
   constructor(private http: HttpClient) {}
 
   buscarEnderecoPorCep() {
+    if(this.cep.length < 8) {
+      alert("Número de caracteres menor que o necessário, por favor digite um cep válido!")
+    } else if(this.cep.length > 8) {
+      alert("Número de caracteres maior que o necessário, por favor digite um cep válido!")
+    }
     this.http.get<any>(`http://localhost:8080/viacep/${this.cep}`).subscribe((endereco) =>{
       this.endereco = endereco
     });

@@ -10,7 +10,7 @@
   font-family: $main-font;
 }
 
-input {
+input, select{
   border: 1px solid $gray-color;
   outline: none;
   border-radius: 2rem;
